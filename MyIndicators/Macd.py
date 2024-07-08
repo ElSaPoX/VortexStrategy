@@ -1,6 +1,7 @@
 import yfinance as yf
 import matplotlib.pyplot as plt
 
+
 class MACD:
     def __init__(self, fast_length=12, slow_length=26, signal_smoothing=9):
         self.fast_length = fast_length

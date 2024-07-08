@@ -16,5 +16,7 @@ class VOLUME:
 
         # Calcola la SMA a 150 giorni del volume
         sma_length = 150
+
         data['Volume_SMA'] = volume.rolling(window=sma_length).mean()
-        return volume.rolling
+
+        return  data['Volume_SMA'], data['Volume']

@@ -38,4 +38,7 @@ class VORTEX:
         vi_plus = sum_vm_plus / sum_tr
         vi_minus = sum_vm_minus / sum_tr
 
-        return vi_plus, vi_minus
+        data['VI+'] = vi_plus
+        data['VI-'] = vi_minus
+
+        return data['VI+'], data['VI-']

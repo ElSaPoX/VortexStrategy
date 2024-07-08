@@ -1,4 +1,3 @@
-
 import yfinance as yf
 import matplotlib.pyplot as plt
 from MyIndicators import get_indicator

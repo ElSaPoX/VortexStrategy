@@ -29,4 +29,4 @@ class RSI:
         rsi = 100 - (100 / (1 + rs))
         data['RSI'] = rsi
 
-        return rsi
+        return data['RSI']

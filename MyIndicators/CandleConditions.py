@@ -31,7 +31,8 @@ class CANDLECONDITIONS:
 
         # Applicare i pattern ai dati
         data = pd.DataFrame(index=high.index)
-        data['Bullish'] = is_bullish()
-        data['Bearish'] = is_bearish()
 
-        return data['Bullish'], data['Bearish']
+        data['BullishC'] = is_bullish()
+        data['BearishC'] = is_bearish()
+
+        return data['BullishC'], data['BearishC']
