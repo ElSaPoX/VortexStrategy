@@ -1,16 +1,8 @@
-import yfinance as yf
-import matplotlib.pyplot as plt
-
 class RSI:
     def __init__(self, rsi_period):
         self.rsi_period = rsi_period
 
     def calculate(self, close):
-
-        # Scarica i dati storici
-        ticker = 'BTC'
-        data = yf.download(ticker, start='2022-01-01', end='2023-01-01')
-        close = data['Close']
 
         # Calcola l'RSI manualmente
         rsi_period = 14
@@ -27,6 +19,5 @@ class RSI:
         # Calcola l'RSI
         rs = avg_gain / avg_loss
         rsi = 100 - (100 / (1 + rs))
-        data['RSI'] = rsi
 
-        return data['RSI']
+        return rsi

@@ -24,10 +24,12 @@ class CANDLECONDITIONS:
 
         # Definire i pattern candlestick
         def is_bullish():
-            return (prev2_low < prev_low) & (prev_low < low) & (prev2_close > close) & (prev_close < close) & (prev_high < close) & (prev2_open < prev_open)
+            return (prev2_low < prev_low) & (prev_low < low) & (prev2_close > close) & (prev_close < close) \
+                #& (prev_high < close) & (prev2_open < prev_open)
 
         def is_bearish():
-            return (prev2_low > prev_low) & (prev_low > low) & (prev2_close < close) & (prev_close > close) & (prev_high > close)
+            return (prev2_low > prev_low) & (prev_low > low) & (prev2_close < close) \
+                #& (prev_close > close) & (prev_high > close)
 
         # Applicare i pattern ai dati
         data = pd.DataFrame(index=high.index)
@@ -35,4 +37,4 @@ class CANDLECONDITIONS:
         data['BullishC'] = is_bullish()
         data['BearishC'] = is_bearish()
 
-        return data['BullishC'], data['BearishC']
+        return is_bullish(), is_bearish()

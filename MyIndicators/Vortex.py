@@ -8,14 +8,6 @@ class VORTEX:
 
     def calculate(self, high, low, close, open):
 
-        #dati storici
-        ticker = 'BTC'
-        data = yf.download(ticker, start='2022-01-01', end='2023-01-01')
-        high = data['High']
-        low = data['Low']
-        close = data['Close']
-        open = data['Open']
-
         #lunghezza giorni
         length = 14
 
@@ -38,7 +30,4 @@ class VORTEX:
         vi_plus = sum_vm_plus / sum_tr
         vi_minus = sum_vm_minus / sum_tr
 
-        data['VI+'] = vi_plus
-        data['VI-'] = vi_minus
-
-        return data['VI+'], data['VI-']
+        return vi_plus, vi_minus
